@@ -15,7 +15,7 @@
 
     <!-- open graph protocols -->
     <meta property="og:title" content="IY8 Mural" />
-    <meta property="og:url" content="https://www.mural.usciya.com/" />
+    <meta property="og:url" content="https://www.usciya.com/" />
     <meta
       property="og:description"
       content="USC Iovine and Young Academy Cohort 8 Mural"
@@ -23,8 +23,11 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.usciya.com/images/og.png" />
 
+    <!-- no index -->
+    <meta name="robots" content="noindex" />
+
     <!-- favicon -->
-    <link rel="icon" href="https://www.mural.usciya.com/images/icon.png" />
+    <link rel="icon" href="images/icon.png" />
 
     <!-- css -->
     <link rel="stylesheet" href="https://use.typekit.net/hvy6gmc.css" />
@@ -35,17 +38,45 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/survey.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- google analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4MVRZ9XXKX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4MVRZ9XXKX");
+    </script>
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div>
+        <h1>USC Iovine and Young Academy</h1>
+        <h1 class="white">Cohort 8 Mural</h1>
+      </div>
+    </div>
+
+    <footer class="container">
+      <div class="footer">
+        <p class="disclaimer">
+          This site ("www.usciya.com") is not affiliated, approved, nor endorsed
+          by the University of Southern California or the USC Iovine and Young
+          Academy.
+        </p>
+        <p class="copyright">©<span id="year"></span> USC IYA Cohort 8</p>
+      </div>
+    </footer>
 
     <script src="js/main.js"></script>
   </body>
