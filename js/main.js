@@ -1,6 +1,6 @@
 // toggle dropdown on click
 $(".card").on("click", function () {
-  $(this).find(".dropdown").toggleClass("clicked");
+  $(this).toggleClass("clicked");
 });
 
 // get current year
