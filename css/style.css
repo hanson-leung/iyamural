@@ -102,6 +102,12 @@ p,
   font-family: aktiv-grotesk, sans-serif;
   line-height: 1.6em;
   font-size: 0.95rem;
+  margin: 0;
+  padding: 0;
+}
+
+p.subhead {
+  color: var(--yellow);
 }
 
 .bold {
@@ -174,6 +180,7 @@ header {
   border-radius: 0.5rem;
   width: 100%;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .card.inverted {
@@ -186,11 +193,20 @@ header {
 .dropdown {
   overflow: hidden;
   max-height: 0px;
-  transition: var(--short);
+  transition: max-height var(--short);
+  display: grid;
+  grid-gap: 1rem;
 }
 
 .card.clicked .dropdown {
   max-height: 400px;
+}
+
+/* add spacing above dropdown */
+.dropdown::before {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
 }
 
 /* dropdown arrow */
@@ -213,7 +229,7 @@ header {
   border-right: 5px solid transparent;
   border-top: 5px solid var(--black);
   border-radius: 0.4rem;
-  transition: var(--short);
+  transition: var(--short) ease-out;
 }
 
 /* dropdown inverted styling */
@@ -246,5 +262,28 @@ header {
   width: 100%;
   display: flex;
   margin: 0 auto;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0 1rem 0;
+}
+
+/* cohort */
+.profiles-layout {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-name {
+  padding-left: 1rem;
+}
+
+.headshot {
+  width: 60px;
+  border-radius: 9999rem;
+  border: 3px solid var(--white);
 }
