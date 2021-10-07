@@ -167,6 +167,8 @@ for (let i = 0; i < cohortEightProfiles.length; i++) {
 $(".profile").on("click", function () {
   $(".profile").not(this).hide();
   $(this).addClass("clicked");
+  // show buttons
+  $("#explore_navigation").show();
 });
 
 // remove class clicked and show profiles
@@ -180,4 +182,6 @@ const SHOW_ALL = function () {
 // show cohort profiles on button click
 $("#button_view_cohort").on("click", function () {
   SHOW_ALL();
+  // hide buttons
+  $("#explore_navigation").hide();
 });
