@@ -93,29 +93,16 @@ h2 {
   color: var(--yellow);
 }
 
-.comic-sans {
-  font-family: "Comic Sans MS", "Comic Sans", "sans-serif";
-}
-
 p,
 ::placeholder {
-  font-family: aktiv-grotesk, sans-serif;
+  font-family: FoundersGrotesk-Web, sans-serif;
   line-height: 1.6em;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   margin: 0;
   padding: 0;
 }
 
-p.subhead {
-  color: var(--yellow);
-}
-
-.bold {
-  font-weight: var(--bold);
-}
-
 /* general */
-
 body {
   background-color: var(--white);
   min-height: 100vh;
@@ -129,14 +116,8 @@ body {
   justify-content: space-between;
 }
 
-.input-options {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
 .container {
-  padding: 2rem;
+  padding: 2rem 1rem;
   display: grid;
   grid-auto-columns: auto;
   grid-gap: 2rem;
@@ -149,18 +130,39 @@ body {
 
 /* button */
 .button {
-  border: 3px solid var(--black);
+  background-color: var(--white);
   color: var(--black);
-  padding: 0rem 2rem;
-  margin: 10px 0;
+  border: 3px solid var(--white);
+  padding: 0.2rem 1rem;
   border-radius: 1rem;
   cursor: pointer;
   width: fit-content;
+  pointer-events: all;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 999;
 }
 
-.button:hover {
+.button.inverted {
   background-color: var(--transparent);
   color: var(--white);
+  border: 3px solid var(--white);
+}
+
+.left-arrow::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 5px solid var(--transparent);
+  border-bottom: 5px solid var(--transparent);
+  border-right: 5px solid var(--black);
+  border-radius: 0.4rem;
+  margin-right: 0.5rem;
 }
 
 /* header */
@@ -190,6 +192,8 @@ header {
   height: fit-content;
   cursor: pointer;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
 .card.inverted {
@@ -295,7 +299,20 @@ header {
   padding: 1rem 0;
 }
 
-.profile-name {
+.profile.clicked {
+  grid-column: span 2;
+}
+
+.bio {
+  display: none;
+}
+
+.profile.clicked .bio {
+  display: block;
+}
+
+.profile.clicked .name {
+  font-weight: var(--medium);
 }
 
 .headshot {

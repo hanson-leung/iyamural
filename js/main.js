@@ -1,6 +1,17 @@
+//
+// need to find a way to open cards but allow users to click on profiles and not have it close!
+//
+
+console.log(
+  "%c nothing to see here! ",
+  "background: #1d1d1b; color: #fff; padding: .5rem 1rem; border-radius: .2rem;"
+);
+
 // toggle dropdown on click
 $(".card").on("click", function () {
   $(this).toggleClass("clicked");
+
+  // need to add: close other tabs when you open another
 });
 
 const cohortEightProfiles = [
@@ -132,17 +143,41 @@ const cohortEightProfiles = [
   },
 ];
 
+// clone profiles template for array length
 const ARTICLES = $("article");
-// clone article template
 for (let i = 0; i < cohortEightProfiles.length; i++) {
   ARTICLES.clone().appendTo($(".cohort"));
 
-  // add photos for each article
+  // add headshot for each profile
   $("article")
     .eq(i)
     .find("img")
     .attr("src", "images/" + cohortEightProfiles[i].headshot);
 
-  // add text
-  $("article").eq(i).find(".profile-name ").html(cohortEightProfiles[i].name);
+  // add name to profile
+  $("article")
+    .eq(i)
+    .find(".name")
+    .html(cohortEightProfiles[i].name)
+    .next()
+    .html(cohortEightProfiles[i].bio);
 }
+
+// show detailed profile on click (show profile bio)
+$(".profile").on("click", function () {
+  $(".profile").not(this).hide();
+  $(this).addClass("clicked");
+});
+
+// remove class clicked and show profiles
+const SHOW_ALL = function () {
+  if ($(".profile").hasClass("clicked")) {
+    $(".profile").removeClass("clicked");
+  }
+  $(".profile").show();
+};
+
+// show cohort profiles on button click
+$("#button_view_cohort").on("click", function () {
+  SHOW_ALL();
+});
