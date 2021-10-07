@@ -56,7 +56,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
-  color: var(--black);
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   line-height: 1.2;
@@ -174,11 +174,20 @@ header {
   grid-gap: 1rem;
 }
 
+@media screen and (min-width: 760px) {
+  #cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
+
 .card {
   background-color: var(--black);
   color: var(--white);
   border-radius: 0.5rem;
   width: 100%;
+  height: fit-content;
   cursor: pointer;
   overflow: hidden;
 }
@@ -199,7 +208,7 @@ header {
 }
 
 .card.clicked .dropdown {
-  max-height: 400px;
+  max-height: 4000px;
 }
 
 /* add spacing above dropdown */
@@ -265,7 +274,7 @@ header {
   padding: 0.5rem 0 1rem 0;
 }
 
-/* cohort */
+/* explore the cohort card styling */
 .cohort {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -296,4 +305,9 @@ header {
   border: 3px solid var(--white);
   margin: 0 auto;
   margin-bottom: 0.5rem;
+}
+
+/* hide last profile after being cloned by jQuery */
+article:last-child {
+  display: none;
 }
