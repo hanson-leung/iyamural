@@ -9,7 +9,7 @@ $(".card").on("click", function () {
 // photo gallery
 const cohortEightProfiles = [
   {
-    name: "",
+    name: "Hanson Leung",
     headshot: "",
     funnyPhoto: "",
     bio: "",
